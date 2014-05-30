@@ -1,4 +1,4 @@
-mespace :deploy do
+namespace :deploy do
   desc "compiles assets locally then rsyncs"
   task :compile_assets_locally do
     run_locally do
