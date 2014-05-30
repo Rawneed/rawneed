@@ -17,7 +17,30 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 set :keep_releases, 5
 
+# which config files should be copied by deploy:setup_config
+# see documentation in lib/capistrano/tasks/setup_config.cap
+# for details of operations
+set :config_files, %w( nginx.conf unicorn.rb unicorn_init.sh)
+
+# which config files should be made executable after copying
+# by deploy:setup_config
+set :executable_config_files, %w( unicorn_init.sh)
+
+
+# set(:symlinks, [
+#  {
+#    source: "nginx.conf",
+#    link: "/etc/nginx/sites-enabled/#{fetch(:application)}"
+#  },
+#  {
+#    source: "unicorn_init.sh",
+#    link: "/etc/init.d/unicorn_#{fetch(:application)}"
+#  }
+# ])
+
 namespace :deploy do
+#  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+#  after 'deploy:setup_config', 'nginx:reload'
   before :deploy, "deploy:check_revision"
   after :deploy, "deploy:restart"
   after :rollback, "deploy:restart"
