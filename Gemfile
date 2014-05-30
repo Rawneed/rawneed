@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'sprockets', '2.11.0'
 gem 'acts-as-taggable-on'
 gem 'font-awesome-sass'
+gem 'mysql2'
 
 # Authentication
 gem 'devise'
@@ -41,7 +42,9 @@ gem 'will_paginate', '~> 3.0.4'
 
 # Production
 group :production do
-# gem 'pg'
+ # gem 'mysql'
+ # gem 'mysql2' 
+# gem 'pg', '~> 0.17.0'
  gem 'rails_12factor', '0.0.2'
  gem 'unicorn', '~> 4.8.0'
 end
