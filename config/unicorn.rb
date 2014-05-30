@@ -1,4 +1,4 @@
-root = "/home/rawneed_admin/var/www/rawneed/current"
+root = "/var/www/rawneed/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
