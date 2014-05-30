@@ -1,0 +1,9 @@
+<% provide(:title, "Home") %>
+<div class="posts">
+ <% if @entries.any? %>
+  <%= render @entries %>
+ <% end %>
+   <iframe id="iframecode" onload="" scrolling="no" frameborder="0" 
+  width="536" src="http://instaembedder.com/gallery.php?username=rawneed&amp;hashtag=&amp;width=150&amp;cols=3&amp;frame=1&amp;image_border=10&amp;rows=4&amp;cell_margin=10&amp;display_username=0&amp;likes=1&amp;comments=1&amp;date=1&amp;link=1&amp;caption=0&amp;color=gray" 
+  style="height: 804px;"></iframe>
+</div>

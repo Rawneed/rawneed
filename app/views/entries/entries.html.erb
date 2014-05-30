@@ -1,0 +1,20 @@
+ass="content-subhead">
+  Entry
+ </h1>
+  <section class="post">
+    <header class="post-header">
+      <%= link_to image_tag("entry.jp", :class => "post-avatar", :width => 48, :height => 48) %>
+      
+      <h2 class="post-title"><%= entry.title %></h2>
+      
+      <p class="post-meta">
+      Tags: <a class="post-category post-category-design">tag#1</a><a class="post-category post-category-pure">tag#2</a><a class="post-category post-category-js">tag#3</a><a class="post-category">tag#4</a>
+      </p>
+    </header>
+    <div class="post-description">
+     <p>
+        <% entry.link %>
+        <% entry.description %>
+     </p>
+    </div>
+  </section>

@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'sprockets', '2.11.0'
 gem 'acts-as-taggable-on'
+gem 'font-awesome-sass'
 
 # Authentication
 gem 'devise'
@@ -36,10 +37,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.5.0'
 gem 'biblesearch-api', '1.1.0'
+gem 'will_paginate', '~> 3.0.4'
 
 # Production
 group :production do
- gem 'pg'
+# gem 'pg'
  gem 'rails_12factor', '0.0.2'
  gem 'unicorn', '~> 4.8.0'
 end
