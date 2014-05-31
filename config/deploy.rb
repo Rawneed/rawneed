@@ -1,7 +1,7 @@
 # lock "3.2.1"
 
 set :application, "rawneed"
-set :repo_url, "ssh://rawneed_admin:Victory7@23.92.21.231:1022/var/git/rawneed.git"
+set :repo_url, "/var/git/rawneed.git"
 
 set :deploy_to, "/var/www/#{fetch(:application)}"
 set :deploy_user, "rawneed_admin"
