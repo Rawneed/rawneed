@@ -1,4 +1,4 @@
-lock "3.2.1"
+# lock "3.2.1"
 
 set :application, "rawneed"
 set :repo_url, "/var/git/rawneed.git"
