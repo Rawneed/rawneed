@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'net-ssh', '~>2.9.1'
+
 gem 'sprockets', '2.11.0'
 gem 'acts-as-taggable-on'
 # gem 'font-awesome-sass'

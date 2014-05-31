@@ -8,12 +8,6 @@ namespace :setup do
     end
   end
 
- task :whoami do
-  on roles(:all) do
-    execute :whoami
-  end
- end
-
   desc "Seed the database."
   task :seed_db do
     on roles(:app) do
