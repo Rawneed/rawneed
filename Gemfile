@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 gem 'sprockets', '2.11.0'
 gem 'acts-as-taggable-on'
-gem 'font-awesome-sass'
+# gem 'font-awesome-sass'
 gem 'mysql2'
 
 # Authentication
