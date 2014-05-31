@@ -1,10 +1,12 @@
 # lock "3.2.1"
 
-set :application, "rawneed"
-set :repo_url, "/var/git/rawneed.git"
+set :application, 'rawneed'
+set :deploy_user, 'rawneed_admin'
+
+set :scm, :git
+set :repo_url, '/var/git/rawneed.git'
 
 set :deploy_to, "/var/www/#{fetch(:application)}"
-set :deploy_user, "rawneed_admin"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, "2.1.1"
