@@ -9,7 +9,7 @@ set :repo_url, '/var/git/rawneed.git'
 set :deploy_to, "/var/www/#{fetch(:application)}"
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
-set :rbenv_ruby, "2.1.1"
+set :rbenv_ruby, "2.1.2"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w{rake gem bundle ruby rails}
 set :rbenv_roles, :all # default value
@@ -27,7 +27,6 @@ set :config_files, %w( nginx.conf unicorn.rb unicorn_init.sh)
 # which config files should be made executable after copying
 # by deploy:setup_config
 set :executable_config_files, %w( unicorn_init.sh)
-
 
 # set(:symlinks, [
 #  {
