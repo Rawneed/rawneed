@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def index
       # @entries = Entry.paginate(:page => params[:page], :order => 'created_at DESC')
-      @entries = Entry.all
+     # @entries = Entry.all
   end
   
   def about
