@@ -6,6 +6,7 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <meta charset="utf-8">
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rawneed.com">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
@@ -13,7 +14,7 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="content pure-u-1 pure-u-md-3-4">
+    <div class="content pure-u-1 pure-u-md-2-5">
      <div>
       <!-- A wrapper for all entries  -->
       <% flash.each do |key, value| %>
