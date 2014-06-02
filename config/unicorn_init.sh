@@ -14,7 +14,7 @@ set -e
 TIMEOUT=${TIMEOUT-60}
 APP_ROOT=/home/rawneed_admin/var/www/rawneed/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
-CMD="cd $APP_ROOT; ~/.rbenv/bin/rbenv exec bundle exec unicorn -d -D -c /home/rawneed_admin/var/www/rawneed/shared/config/unicorn.rb -E production"
+CMD="cd $APP_ROOT; ~/.rbenv/bin/rbenv exec bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
 AS_USER=rawneed_admin
 set -u
 
