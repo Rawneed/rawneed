@@ -1,12 +1,20 @@
-#!/bin/bash
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          unicorn
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Manage unicorn server
+# Description:       Start, stop, restart unicorn server for a specific application.
+### END INIT INFO
 set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/home/rawneed_admin/var/www/rawneed/current
-PID_DIR=$APP_ROOT/tmp/pids
-PID=$PID_DIR/unicorn.pid
-CMD="cd $APP_ROOT; ~/.rbenv/bin/rbenv exec bundle exec unicorn -d -D -c /home/rawneed_admin/var/www/rawneed/shared/config/unicorn.rb -E production"
+APP_ROOT=/home/rawneed_amin/var/www/rawneed/current
+PID=$APP_ROOT/tmp/pids/unicorn.pid
+CMD="cd $APP_ROOT; ~/.rbenv/bin/rbenv exec bundle exec unicorn -d -D -c $APP_ROOT/config/unicorn.rb -E production"
 AS_USER=rawneed_admin
 set -u
 
@@ -18,12 +26,6 @@ sig () {
 
 oldsig () {
   test -s $OLD_PIN && kill -$1 `cat $OLD_PIN`
-}
-
-workersig () {
-  workerpid="$APP_ROOT/tmp/pids/unicorn.$2.pid"
-  
-  test -s "$workerpid" && kill -$1 `cat $workerpid`
 }
 
 run () {
@@ -47,12 +49,8 @@ force-stop)
   sig TERM && exit 0
   echo >&2 "Not running"
   ;;
-kill_worker)
-  workersig QUIT $2 && exit 0
-  echo >&2 "Worker not running"
-  ;;
 restart|reload)
-  sig USR2 && echo reloaded OK && exit 0
+  sig HUP && echo reloaded OK && exit 0
   echo >&2 "Couldn't reload, starting '$CMD' instead"
   run "$CMD"
   ;;
