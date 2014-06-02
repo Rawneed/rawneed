@@ -1,4 +1,4 @@
-et :application, 'rawneed'
+set :application, 'rawneed'
 set :deploy_user, 'rawneed_admin'
 
 # setup repo details
